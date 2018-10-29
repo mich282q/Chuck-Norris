@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Retrieve a random chuck joke in JSON format..</h2>
+<p>Chuck Norris.</p>
+
+<p id="demo"></p>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj.value;
+    }
+};
+xmlhttp.open("GET", "https://api.chucknorris.io/jokes/random", true);
+xmlhttp.send();
+
+</script>
+
+
+</body>
+</html>
